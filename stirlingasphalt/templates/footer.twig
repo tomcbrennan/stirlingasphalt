@@ -1,14 +1,39 @@
-<footer class="bg-slate-400">
+<footer class="bg-brand font-heading text-lg">
 	<div class="container py-12">
-		Footer
-	</div>
-	<div class="bg-white py-4">
-		<div class="container text-xs flex gap-2 md:items-center max-md:flex-col md:justify-between">
-			<span>
-				&copy;
-				{{ 'now'|date('Y') }}
-				TomDotCom. All Rights Reserved.</span>
-        <a href="https://tomdotcom.au" target="_blank">Site by Tom</a>
+		<div class="grid md:grid-cols-2 gap-10">
+			<div class="block-content max-md:order-2">
+				<h3>Contact</h3>
+				<div class="flex flex-col gap-1">
+					<div class="grid grid-cols-5 items-center gap-3">
+						<span class="col-span-1">Office:</span>
+						<a href="tel:{{ options.office_phone }}" class="col-span-4">{{ options.office_phone }}</a>
+					</div>
+					<div class="grid grid-cols-5 items-center gap-3">
+						<span class="col-span-1">Mobile:</span>
+						<a href="tel:{{ options.mobile_phone }}" class="col-span-4">{{ options.mobile_phone }}</a>
+					</div>
+					<div class="grid grid-cols-5 items-center gap-3">
+						<span class="col-span-1">Email:</span>
+						<a href="mailto:{{ options.email }}" class="col-span-4">{{ options.email }}</a>
+					</div>
+					<div class="grid grid-cols-5 items-center gap-3">
+						<span class="col-span-1">Address:</span>
+						<span class="col-span-4">{{ options.address }}</span>
+					</div>
+					<div class="grid grid-cols-5 items-center gap-3">
+						<span class="col-span-1">PO Box:</span>
+						<span class="col-span-4">{{ options.po_box }}</span>
+					</div>
+				</div>
+
+				<span>
+					&copy;
+					{{ 'now'|date('Y') }}
+					Stirling Asphalt. All Rights Reserved.
+					<a href="https://tomdotcom.au" target="_blank">Site by Tom</a>
+				</span>
+			</div>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27098.932987116914!2d115.74604897431638!3d-31.89663469999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32ae600f2ac4cf%3A0xb78a4f9a038319a7!2sStirling%20Asphalt%20%26%20Site%20Services!5e0!3m2!1sen!2sau!4v1700399979481!5m2!1sen!2sau" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
 	</div>
 </footer>

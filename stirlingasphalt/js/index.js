@@ -1,16 +1,6 @@
-import animateOnScroll from './utils/animate-on-scroll'
-import initAccordions from './components/accordions'
-import initSliders from './components/sliders'
-
 document.addEventListener('DOMContentLoaded', () => {
 	toggleMenu()
 	toggleMobileSubMenu()
-	animateOnScroll()
-	initSliders()
-
-	if (document.querySelector('.accordion')) {
-		initAccordions()
-	}
 
 	// REMOVE DEFAULT ACTION AND LINK FROM PARENT NAVIGATION ITEMS
 
