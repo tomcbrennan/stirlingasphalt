@@ -2,20 +2,20 @@
 
 html,
 body {
-	@apply font-body text-black;
+	@apply font-body text-brandBlack;
 }
 
 body {
 	@apply leading-relaxed text-sm 2xl:text-base;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	@apply font-heading font-bold;
+h1, .is-h1,
+h2, .is-h2,
+h3, .is-h3,
+h4, .is-h4,
+h5, .is-h5,
+h6, .is-h6 {
+	@apply font-heading font-bold !leading-none;
 }
 
 h1,
@@ -53,6 +53,10 @@ h6,
 	@apply flex flex-col gap-4 md:gap-6;
 }
 
+.block-content-small {
+	@apply flex flex-col gap-3;
+}
+
 .block-content :is(ol, ul) {
 	@apply ml-4;
 }
@@ -63,4 +67,8 @@ h6,
 
 .block-content ol li {
 	@apply list-decimal;
+}
+
+.light-font-weight > span {
+	@apply !font-normal;
 }

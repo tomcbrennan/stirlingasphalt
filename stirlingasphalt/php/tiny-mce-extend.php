@@ -33,6 +33,12 @@ function tdc_allow_custom_classes_to_be_applied_to_headings($init_array) {
         'attributes' => array('class' => 'is-button')
     );
 
+    $style_formats[] = array(
+        'title' => "Light Font Weight",
+        'selector' => 'h1,h2,h3,h4,h5,h6',
+        'attributes' => array('class' => 'light-font-weight')
+    );
+
     // Insert the array, JSON ENCODED, into 'style_formats'
     $init_array['style_formats'] = json_encode( $style_formats );
 

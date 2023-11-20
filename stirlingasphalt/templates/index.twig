@@ -1,11 +1,15 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<h2>{{ foo }}</h2>
-	<p>{{ qux }}</p>
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
-	
-	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+	<div class="relative w-full aspect-[16/4]">
+		{% include "partial/image.twig" with { image: '/wp-content/uploads/2023/11/quote-bak.jpg', alt: 'Stirling Asphalt Services', class: "relative w-full h-full object-center object-cover pointer-events-none" } %}
+	</div>
+
+	<section class="relative">
+		<div class="container grid md:grid-cols-2 gap-6">
+			{% for item in services %}
+				{% include "tease-service.twig" %}
+			{% endfor %}
+		</div>
+	</section>
 {% endblock %}

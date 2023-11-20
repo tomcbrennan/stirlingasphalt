@@ -98,6 +98,13 @@ class TomDotCom extends Timber\Site
 	/** This is where you can register custom post types. */
 	public function register_post_types()
 	{
+		register_post_type( 'services', array(
+			'label'        => 'Services',
+			'public'       => true,
+			'has_archive'  => true,
+			'supports'     => array( 'title', 'thumbnail', 'page-builder', 'excerpt' ),
+			'menu_icon'    => 'dashicons-admin-tools',
+		));
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies()
@@ -125,11 +132,16 @@ class TomDotCom extends Timber\Site
 		if (function_exists('get_fields')) {
             $context['options'] = get_fields('options');
         }
+
+		// LOOPS
+		$context['services'] = Timber::get_posts(array(
+			'post_type' => 'services',
+			'post_status' => 'published',
+			'order' => 'DESC'
+		));
+
         // Default menu
 		$context['menu']  = new Timber\Menu();
-
-        // Other menu's - pass the slug to the Menu(). Eg.
-        // $context['footer_menu'] = new Timber\Menu('footer_menu');
 
 		$context['site']  = $this;
 

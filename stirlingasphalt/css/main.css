@@ -23,6 +23,39 @@ main section {
 	@apply relative py-6 lg:py-12;
 }
 
+.current-menu-item-anchor {
+	&:before {
+		content: '';
+		@apply absolute bottom-0 left-0 w-full h-2 bg-brand;
+	}
+}
+
+.menu-item-anchor:not(.current-menu-item-anchor) {
+	&:before {
+		content: '';
+		@apply absolute bottom-0 left-0 w-full h-0 bg-brand duration-100;
+	}
+
+	&:hover {
+		&:before {
+			@apply h-2;
+		}
+	}
+}
+
+.tease-service {
+	&:before {
+		content: '';
+		@apply absolute top-0 left-0 w-full h-full opacity-70 duration-200 bg-black z-10;
+	}
+
+	&:hover {
+		&:before {
+			@apply bg-brand opacity-90;
+		}
+	}
+}
+
 .rounded-top {
 	@apply rounded-t-3xl lg:rounded-t-[100px] 2xl:rounded-t-[200px];
 }

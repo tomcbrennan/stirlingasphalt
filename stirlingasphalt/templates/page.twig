@@ -1,6 +1,12 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+	{% if post.thumbnail %}
+		<div class="relative w-full aspect-[16/4]">
+			{% include "partial/image.twig" with { image: Image(post.thumbnail).src, alt: post.thumbnail.alt, class: "relative w-full h-full object-center object-cover pointer-events-none" } %}
+		</div>
+	{% endif %}
+
 	{% for block in page_builder %}
 		<div data-block="{{ block.acf_fc_layout }}">
 			{{ include("blocks/" ~ block.acf_fc_layout ~ ".twig", ignore_missing = true) }}

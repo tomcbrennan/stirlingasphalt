@@ -1,7 +1,7 @@
-<ul class="bg-white flex flex-col gap-4 h-fit absolute bottom-0 left-0 w-[150%] z-10 rounded-b-md text-black translate-y-full p-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200">
+<ul class="bg-black flex flex-col h-fit absolute bottom-0 left-0 w-[150%] z-10 text-black translate-y-full opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200">
 	{% for item in items %}
 		<li>
-			<a href="{{ item.url }}" target="{{ item.target }}" class="font-heading text-lg no-underline hover:underline">{{ item.title }}</a>
+			<a href="{{ item.url }}" target="{{ item.target }}" class="font-heading text-xl flex w-full px-4 py-2 text-white duration-100 uppercase hover:text-black hover:bg-brand">{{ item.title }}</a>
 		</li>
 	{% endfor %}
 </ul>

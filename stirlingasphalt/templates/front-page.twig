@@ -1,46 +1,38 @@
 {% extends "page.twig" %}
 
 {% block content %}
+	<section class="home-banner max-md:flex max-md:flex-col md:h-[400px] 2xl:h-[500px] !py-0">
+		{% include "partial/image.twig" with { image: Image(fields.banner.background).src, alt: fields.banner.background.alt, class: "relative md:absolute top-0 left-0 w-full h-full object-center object-cover pointer-events-none" } %}
+		<div class="md:container relative h-full">
+			<div class="block-content-small max-md:py-6 w-full md:w-1/2 md:h-full justify-center bg-black bg-opacity-70 px-5 md:px-8">
+				{{ fields.banner.content }}
+			</div>
+		</div>
+	</section>
 
-	{# HOME BANNER EXAMPLE #}
-	<section class="home-banner bg-slate-400 h-[350px] lg:h-[500px] 2xl:h-[600px]">
-		<div class="container flex items-end h-full">
-			<h1>Something delicious  🍯</h1>
+
+	<section class="relative !pb-0">
+		<div class="container block-content">
+			{{ fields.content_block.content }}
+		</div>
+	</section>
+
+	<section class="relative !pb-0">
+		<div class="container grid md:grid-cols-2 gap-6">
+			{% for item in services %}
+				{% include "tease-service.twig" %}
+			{% endfor %}
 		</div>
 	</section>
 
 	<section class="relative">
 		<div class="container block-content">
-			<p>Since our establishment in 2001, Stirling Asphalt has built an outstanding reputation as premium asphalt contractors in Perth and beyond, including the South West, the Wheat Belt and the Goldfields.</p>
-			<p>We are proud providers of quality asphalting, resurfacing, maintenance and commercial paving solutions. Our work with commercial contractors is built upon major investment in the latest road building equipment, trucks and other vehicles. We also focus heavily on the skills and experience of our team members, all of whom hold operator certificates for our equipment and Certificate III in Civil Construction.</p>
+			{{ fields.content_block_2.content }}
 		</div>
 	</section>
 
-	<section>
-		<div class="container block-content">
-			<h1>Why choose Stirling Asphalt for your commercial or residential projects?</h1>
-			<p>Commercial clients who engage Stirling Asphalt can rest easy, secure in the knowledge they have made the best possible decision for their project and their clients. All pavements are constructed in accordance with Main Roads Specification 501 with materials and placement test work by our Nata accredited laboratory.</p>
-			<p>In addition to our commercial work, we continue to provide residential asphalting services to the same exacting standards of quality.</p>
-			<p>Our clients choose us for our range of services, our outstanding reputation and our commitment to operating as an environmentally sustainable business.</p>
-			<h6>Comprehensive services</h6>
-			<p>At Stirling Asphalt, no job is too big or too small. Our services cover every conceivable asphalting need, from large-scale commercial asphalting jobs to small projects in residential areas. Our service approach also covers every aspect of the job, from site preparation to dealing with the relevant regulatory bodies. Wherever required, we also deal with traffic management plans and schedule after-hours work to minimise disruptions to your business or the local community.</p>
-			<p>Our list of successful projects includes:</p>
-			<ul>
-				<li>Roadway and right of way construction, including managing the council/local authority regulatory processes</li>
-				<li>Car park construction, including shopping centres, commercial premises, schools, and residential complexes</li>
-				<li>Multi-courts, such as combined basketball/netball/tennis facilities</li>
-				<li>Resurfacing – asphalt overlays for sites from large to small</li>
-				<li>Maintenance and repairs – full range of services, from potholes and service trenches to speed humps and access ramps</li>
-				<li>Residential driveways</li>
-			</ul>
-			<p>Click on the boxes above or visit the other pages on this website to learn more about our services.</p>
-			<h6>Reputation</h6>
-			<p>At Stirling Asphalt, we are immensely proud of our reputation as one of WA’s most professional and reliable providers of asphalt construction, resurfacing and maintenance services for projects of all sizes. We have the necessary accreditation and personal requirements to be able to provide services to military installations state-wide.</p>
-			<h6>Recycled Materials</h6>
-			<p>We take the environment seriously. We recycle all our materials, sending nothing to landfill, and use recycled materials for new constructions wherever possible.</p>
-			<h6>Equipment</h6>
-			<p>All our equipment is the latest model, highly efficient and has the latest fuel saving technology.</p>
-		</div>
+	<section class="!pb-0 relative w-full aspect-[16/7]">
+		{% include "partial/image.twig" with { image: Image(fields.quote_section.background).src, alt: fields.quote_section.background.alt, class: "relative w-full h-full object-center object-cover pointer-events-none" } %}
 	</section>
 
 {% endblock %}
