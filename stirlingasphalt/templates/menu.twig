@@ -1,6 +1,6 @@
 {% if menu %}
 	{# Desktop #}
-	<ul class="relative z-10 items-center hidden md:flex">
+	<ul class="relative z-10 items-center hidden sm:flex">
 		{% for item in items %}
 			<li class="{{ item.classes|join(' ') }} relative flex items-center gap-1 group">
 				<a target="{{ item.target }}" href="{{ item.link }}" class="{{ item.slug == post.slug ? '!text-brand current-menu-item-anchor' }} menu-item-anchor flex text-white items-center gap-1 font-heading py-4 px-4 uppercase text-xl transition-all duration-200 ease">
@@ -23,21 +23,16 @@
 		{% endfor %}
 	</ul>
 	{# Mobile #}
-	<button data-toggle-menu class="md:hidden mx-auto flex items-center gap-2 py-2">
+	<button data-toggle-menu class="sm:hidden mx-auto flex items-center gap-2 py-3">
 		<span class="font-heading text-white text-xl">Menu</span>
 		{{ include('templates/icons/hamburger.twig') }}
 	</button>
-	<ul data-menu class="bg-black flex flex-col gap-6 p-12 z-30 fixed top-0 right-0 w-full h-screen max-w-lg transform transition duration-300 ease md:hidden">
-		<button data-toggle-menu class="md:hidden flex items-center gap-2 text-white">
-			<span>Close</span>
-			{{ include('templates/icons/cross.twig') }}
-
-		</button>
-		<div class="mt-3 flex-grow flex flex-col overflow-y-scroll">
+	<ul data-menu class="bg-black flex flex-col gap-6 opacity-0 pointer-events-none relative top-0 right-0 w-full h-0 sm:hidden">
+		<div class="mt-3 flex-grow flex flex-col">
 			{% for item in items %}
 				<div data-mobile-menu-item class="space-y-1">
 					<div class="flex items-center justify-between">
-						<a href="{{ item.url }}" class="text-2xl py-1 pr-12 font-heading text-brand uppercase">{{ item }}</a>
+						<a href="{{ item.url }}" class="text-xl py-1 pr-12 font-heading text-brand uppercase">{{ item }}</a>
 						{% if item.children %}
 							<button data-toggle-mobile-sub-menu>{{ include('templates/icons/chevron.twig') }}</button>
 						{% endif %}
