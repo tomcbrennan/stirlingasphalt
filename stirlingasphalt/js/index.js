@@ -1,3 +1,5 @@
+import Spotlight from 'spotlight.js/dist/spotlight.bundle.js'
+
 document.addEventListener('DOMContentLoaded', () => {
 	toggleMenu()
 	toggleMobileSubMenu()

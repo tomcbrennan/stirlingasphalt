@@ -1,7 +1,7 @@
 {% extends "page.twig" %}
 
 {% block content %}
-	<section class="home-banner max-md:flex max-md:flex-col md:h-[400px] 2xl:h-[500px] !py-0">
+	<section class="home-banner max-md:flex max-md:flex-col md:h-[400px] 2xl:h-[500px] !py-0 mt-6">
 		{% include "partial/image.twig" with { image: Image(fields.banner.background).src, alt: fields.banner.background.alt, class: "relative md:absolute top-0 left-0 w-full h-full object-center object-cover pointer-events-none" } %}
 		<div class="md:container relative h-full">
 			<div class="block-content-small max-md:py-6 w-full md:w-1/2 md:h-full justify-center bg-black bg-opacity-70 px-5 md:px-8">
@@ -31,8 +31,11 @@
 		</div>
 	</section>
 
-	<section class="!pb-0 relative w-full aspect-[16/7]">
+	<section class="!pb-0 relative w-full h-[250px] md:h-[400px] 2xl:h-[550px]">
 		{% include "partial/image.twig" with { image: Image(fields.quote_section.background).src, alt: fields.quote_section.background.alt, class: "relative w-full h-full object-center object-cover pointer-events-none" } %}
+		<div class="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-[100px] bg-black bg-opacity-75 w-full flex items-center justify-center">
+			<a href="" class="button relative border-2 border-brand">Get a quick quote</a>
+		</div>
 	</section>
 
 {% endblock %}

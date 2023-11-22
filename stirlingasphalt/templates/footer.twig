@@ -2,15 +2,11 @@
 	<div class="container py-6 sm:py-12">
 		<div class="grid md:grid-cols-2 gap-10">
 			<div class="block-content max-md:order-2">
-				<h3>Contact</h3>
+				<span class="is-h1">Contact</span>
 				<div class="flex flex-col gap-1">
 					<div class="grid grid-cols-5 items-center gap-3">
-						<span class="col-span-1">Office:</span>
-						<a href="tel:{{ options.office_phone }}" class="col-span-4">{{ options.office_phone }}</a>
-					</div>
-					<div class="grid grid-cols-5 items-center gap-3">
-						<span class="col-span-1">Mobile:</span>
-						<a href="tel:{{ options.mobile_phone }}" class="col-span-4">{{ options.mobile_phone }}</a>
+						<span class="col-span-1">Phone:</span>
+						<a href="tel:{{ options.phone }}" class="col-span-4">{{ options.phone }}</a>
 					</div>
 					<div class="grid grid-cols-5 items-center gap-3">
 						<span class="col-span-1">Email:</span>
@@ -26,14 +22,19 @@
 					</div>
 				</div>
 
+				<a href="{{ options.facebook }}" target="_blank">
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewbox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/></svg>
+				</a>
+
 				<span>
 					&copy;
 					{{ 'now'|date('Y') }}
 					Stirling Asphalt. All Rights Reserved.
-					<a href="https://tomdotcom.au" target="_blank">Built by Tom</a>
 				</span>
 			</div>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27098.932987116914!2d115.74604897431638!3d-31.89663469999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32ae600f2ac4cf%3A0xb78a4f9a038319a7!2sStirling%20Asphalt%20%26%20Site%20Services!5e0!3m2!1sen!2sau!4v1700399979481!5m2!1sen!2sau" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			{% if options.location_map %}
+				{{ options.location_map }}
+			{% endif %}
 		</div>
 	</div>
 </footer>

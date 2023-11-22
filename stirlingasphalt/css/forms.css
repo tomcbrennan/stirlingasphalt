@@ -1,1 +1,23 @@
-/* Form styles go here */
+.gform_wrapper {
+    .gform_required_legend {
+        @apply hidden;
+    }
+
+    .gform_fields {
+        label, legend {
+            @apply font-heading !text-base !uppercase !font-semibold;
+
+            .gfield_required {
+                @apply text-black;
+            }
+        }
+
+        input, textarea, select {
+            @apply bg-transparent border border-black text-black border-opacity-25;
+        }
+    }
+
+    .gform_button {
+        @apply cursor-pointer;
+    }
+}

@@ -136,7 +136,7 @@ class TomDotCom extends Timber\Site
 		// LOOPS
 		$context['services'] = Timber::get_posts(array(
 			'post_type' => 'services',
-			'post_status' => 'published',
+			'post_status' => 'publish',
 			'order' => 'DESC'
 		));
 

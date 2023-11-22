@@ -1,0 +1,27 @@
+{% extends "page.twig" %}
+
+{% block content %}
+	{% if post.thumbnail %}
+		<div class="relative w-full max-2xl:aspect-[16/4] mt-6">
+			{% include "partial/image.twig" with { image: Image(post.thumbnail).src, alt: post.thumbnail.alt, class: "relative w-full h-full object-center object-cover pointer-events-none" } %}
+		</div>
+	{% endif %}
+
+	<section class="relative">
+		<div class="container block-content">
+			<h1 class="text-brand">Gallery</h1>
+			<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+				{% for item in fields.gallery %}
+                    {% include "partial/image.twig" with { image: Image(item).src, alt: item.alt, class: "spotlight relative w-full aspect-1/1 object-center object-cover cursor-pointer duration-200 hover:scale-[1.02]", attributes: 'data-src="' ~ item.url ~ '"' } %}
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+
+    {% for block in page_builder %}
+		<div data-block="{{ block.acf_fc_layout }}">
+			{{ include("blocks/" ~ block.acf_fc_layout ~ ".twig", ignore_missing = true) }}
+		</div>
+	{% endfor %}
+
+{% endblock %}

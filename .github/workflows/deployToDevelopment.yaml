@@ -28,7 +28,7 @@ jobs:
 
       - name: 🔨 Build Project
         run: |
-          cd THEME_NAME
+          cd stirlingasphalt
           npm install
           npm run build
           composer install
@@ -39,5 +39,5 @@ jobs:
           server: 43.250.142.21
           username: tomdotco
           password: ${{ secrets.DEV_FTP_PASS }}
-          server-dir: SITE_FOLDER_NAME/wp-content/themes/
+          server-dir: stirlingasphalt/wp-content/themes/
           protocol: ftps

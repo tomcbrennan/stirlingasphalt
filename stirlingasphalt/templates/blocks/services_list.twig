@@ -1,5 +1,7 @@
 <section class="relative">
-	<div class="container grid md:grid-cols-2 gap-6">
+	{% include "partial/image.twig" with { image: "/wp-content/uploads/2023/11/quote-bak.jpg", alt: "Stirling Asphalt", class: "absolute top-0 left-0 w-full h-full object-center object-cover pointer-events-none" } %}
+	<div class="absolute top-0 left-0 w-full h-full z-10 bg-gray-300 bg-opacity-80"></div>
+	<div class="container relative z-20 grid md:grid-cols-2 gap-6">
 		{% for item in services %}
 			{% include "tease-service.twig" %}
 		{% endfor %}

@@ -1,7 +1,8 @@
-<a href="{{ item.link }}" class="tease-service relative w-full bg-black p-5 md:p-8 md:aspect-[16/11]">
+<div class="tease-service relative w-full bg-black p-5 md:p-8 md:aspect-[16/11]">
 	{% include "partial/image.twig" with { image: Image(item.thumbnail).src, alt: item.thumbnail.alt, class: "absolute top-0 left-0 w-full h-full object-center object-cover pointer-events-none" } %}
-	<div class="block-content-small relative text-white z-20">
+	<div class="block-content-small relative text-white z-20 max-w-[500px]">
 		<h2 class="is-h1">{{ item.name }}</h2>
 		<p>{{ item.preview.read_more('') }}</p>
+		<a href="{{ item.link }}" class="button relative z-30">View service</a>
 	</div>
-</a>
+</div>
