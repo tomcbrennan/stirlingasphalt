@@ -4,6 +4,7 @@
 @import './typography.css';
 @import './forms.css';
 @import './buttons.css';
+@import 'spotlight.js/dist/css/spotlight.min.css';
 
 @layer components {
 	.container {
