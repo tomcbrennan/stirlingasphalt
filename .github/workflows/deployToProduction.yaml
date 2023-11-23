@@ -1,29 +1,24 @@
-name: Publish Website
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: push
 name: 🚀 Deploy website on push
 jobs:
-  build:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
 
-      - name: 🔨 Build Project
-        run: |
-          cd stirlingasphalt
-          npm install
-          npm run build
-          composer install
+    - name: 🔨 Build Project
+      run: |
+        cd stirlingasphalt
+        npm install
+        npm run build
+        composer install
 
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
-        with:
-          server: 103.27.34.130
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: 103.27.34.130
           username: tomdotcom@stirlingasphalt.com.au
           password: ${{ secrets.PROD_FTP_PASS }}
           server-dir: wp-content/themes/
