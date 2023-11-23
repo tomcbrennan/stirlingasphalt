@@ -19,7 +19,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: 103.27.34.130
-          username: tomdotcom@stirlingasphalt.com.au
-          password: ${{ secrets.PROD_FTP_PASS }}
-          server-dir: wp-content/themes/
-          protocol: ftps
+        username: tomdotcom@stirlingasphalt.com.au
+        password: ${{ secrets.PROD_FTP_PASS }}
+        server-dir: wp-content/themes/
+        protocol: ftps
